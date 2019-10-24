@@ -444,7 +444,6 @@ body {
     
     height: 360px;
 } 
-
 .card--GeoSpec a:nth-last-child(1),
 .card--TeenWeek a:nth-last-child(1){
     margin-left: 10px;
@@ -630,7 +629,6 @@ body {
     
     }
     
-
     .card__item {
         max-width: 280px;
         max-height: 280px;
@@ -657,9 +655,7 @@ body {
     } 
     .card--TeenWeek .button{
         display: none;
-
     }
-
     
     .card--GeoSpec h3{
         margin: 20px 0 80px 10px;

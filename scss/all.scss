@@ -1,7 +1,7 @@
 $bg: #f2f5f7;
 $white: #ffffff;
-$grey: #42515b;
-$grayLink: rgba(66, 81, 91, 0.1);
+$gray: #42515b;
+$grayLink: rgba(71, 72, 73, 0.3);
 $blue: #117af7;
 $black: #000;
 
@@ -15,24 +15,45 @@ $black: #000;
     align-items: center; 
     opacity: 1;
 
-    &:hover, :focus{
+    &:hover,&:focus{
         background-color: $color;
         box-sizing: border-box;
+        cursor: pointer;
          a{
             color: $white;
         }
     }
 }
 
-@mixin links ($color) {
+@mixin fullCollorButton ($color) {
+    border: 2px solid $color;
     border-radius: 35px;
-    padding: 15px 30px;
+    padding: 15px 30px;   
+    background-color: $color;
+
+    &:hover,&:focus{
+        border: 2px solid $color;
+        background-color: transparent;
+        box-sizing: border-box;
+         a{
+        background-color: transparent;
+        color: $blue;
+        border: none;
+        }
+    }
+    
+}
+
+// тел в header
+@mixin links ($color) { 
+    border-radius: 35px;
+    padding: 15px 35px;
     text-align: center;
     vertical-align: middle;
     align-items: center; 
     box-sizing: border-box;
 
-    &:hover, :focus{
+    &:hover,&:focus{
         background-color: $color;
          a{
             color: $white;
@@ -40,15 +61,16 @@ $black: #000;
     }
 }
 
+// кнопки в header
 @mixin linksSmall ($color) {
     border-radius: 35px;
-    padding: 15px 0px;
+    // padding: 15px 0px;
     text-align: center;
     vertical-align: middle;
     align-items: center; 
     box-sizing: border-box;
 
-    &:hover, :focus{
+    &:hover,&:focus{
         background-color: $color;
          a{
             color: $white;
@@ -69,9 +91,11 @@ html {
 
     text-transform: uppercase;
     }
+
 body {
     min-width: 320px;
     box-sizing: border-box;
+    margin: 0;
 }
 
 ul{
@@ -80,6 +104,8 @@ ul{
     list-style: none; 
 }
 
+
+
   /* header */
 
 .main-nav {
@@ -87,7 +113,7 @@ ul{
     background-color: $bg;
 
     .header-conteiner{
-        max-width: 1305px;
+        max-width: 1353px;
 
         margin: auto;
         padding: 5px 15px;
@@ -101,7 +127,7 @@ ul{
             justify-content: space-between;
         }
 
-        @media (min-width: 688px) {
+        @media (min-width: 720px) {
             justify-content: flex-end;
         }
         
@@ -148,7 +174,7 @@ ul{
 
         .site-navigation{
             a{
-                color: $grey;
+                color: $gray;
                 text-decoration: none;
             }
             li{
@@ -172,7 +198,7 @@ ul{
                 display: none;
             }
 
-            @media (min-width: 688px){
+            @media (min-width: 720px){
                     display: block;
                 }
             }
@@ -188,7 +214,7 @@ ul{
                 display: block;
             }
 
-            @media (min-width: 688px){
+            @media (min-width: 720px){
                     display: none;
                 }
 
@@ -248,9 +274,277 @@ ul{
     
         
     }
+
+    /*  SLIDER */
+
+    .slider {
+        width: 100%;
+        max-height: 660px;
+
+        @media (min-width: 983px) {
+            margin-top: 55px;
+        } 
+
+        background-image: url(../images/Illustration.png);
+        background-size: contain;
+        background-position: right;
+        background-repeat: no-repeat;
+
+        .slider__text{
+            box-sizing: border-box;
+            
+            max-width: 1305px;
+            width: 100%;
+            margin: 0 auto;
+            // padding-left: 30px;
+            padding: 8px;
+            font-size: 16px;
+
+            color: #42515b;
+            text-decoration: none;
+
+            h1{
+                @media (min-width: 720px) {
+                    margin-left: 74px;
+                    font-size: 50px;
+                    line-height: 65px;
+                    font-weight: bold;
+
+
+                } 
+            }
+
+            h3{
+                font-family: 'Ubuntu', sans-serif;
+                font-size: 16px;
+                line-height: 65px;
+                font-weight: 100;
+                text-transform: none;
+
+
+                @media (min-width: 720px) {
+                    margin-left: 74px;
+                } 
+
+                @media (min-width: 983px) {
+                    margin-bottom: 53px;
+                } 
+            }
+
+            .button__cont{
+                @include fullCollorButton($blue);
+                display: flex;
+                margin-left: 56px;
+                margin-right: auto;
+
+                @media (min-width: 411px) {
+                   margin-left: 102px;
+                }
+
+                @media (min-width: 720px) {
+                    margin-left: 74px;
+                } 
+
+                a{
+                    font-size: 16px;
+                    color: $white;
+                    text-decoration: none;
+                    font-family: 'Akrobat';
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+            }
+            .dots{
+
+                @media (min-width: 720px) {
+                    margin: 160px 0 60px 74px;
+                } 
+                .dot{
+                    cursor: pointer;
+                    height: 8px;
+                    width: 8px;
+                    margin: 0 2px;
+                    background-color: #bbb;
+                    border-radius: 50%;
+                    display: inline-block;
+                    transition: background-color 0.6s;
+                }
+            }
+            
+
+        }
+    }
+}
+/* PROJECTS */
+.main__content{
+
+    .cards {
+        max-width: 1170px;
+        width: 100%;
+        margin: auto;
+    
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @media (min-width: 1170px){
+           margin-top: 100px;
+        }
+
+
+        .cards__list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        
+            color: #fff;
+
+            .card__item {
+                width: 320px;
+                height: 320px;
+                margin: 8px;
+
+                @media (min-width: 1008px) {
+                    width: 360px;
+                    height: 360px;
+                    margin: 15px;
+                }
+                
+                a{
+                    text-decoration: none;
+                    color: #fff;
+                    border-radius: 35px;
+                    padding: 15px 35px;
+                    text-align: center;
+                    vertical-align: middle;
+                    align-items: center; 
+                    box-sizing: border-box;
+                    background-color: $grayLink;
+                }
+
+                h3{
+                    height: 240px;
+                    font-weight: 300;
+                    letter-spacing: 2px;
+                    margin: 40px 0 0 30px;
+                }
+
+                &.card--Exxon {
+                    background-image: url(../images/Back-1.jpg);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+                &.card--Talan {
+                    background-image: url(../images/Back-2.jpg);
+            
+                            @media (min-width: 320px) {
+                                background-size: auto;
+                                background-position: right;
+                                background-repeat: no-repeat;
+                            }
+
+                            @media (min-width: 1170px){
+                                width: 750px;
+                                background-size: contain;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                            }
+            
+                }
+                &.card--TeenWeek {
+                    background-image: url(../images/Back-3.jpg);
+                            
+                            @media (min-width: 320px) {
+                                background-size: auto;
+                                background-position: right;
+                                background-repeat: no-repeat;
+                                
+                            }
+            
+                            @media (min-width: 720px){
+                                width: 750px;
+                                background-size: contain;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                            }
+                }
+                &.card--Baseg {
+                    background-image: url(../images/Back-4.jpg);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+                &.card--PPD {
+                    background-image: url(../images/Back-5.jpg);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+                &.card--Kairos {
+                    background-image: url(../images/Back-6.jpg);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    color: #42515b;
+            
+                    a{
+                        color: #42515b;
+                    
+                    }
+            
+                }
+                
+                &.card--GeoSpec{
+                    background-image: url(../images/Back-7.jpg);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+
+        button{
+            margin: 15px auto 30px;
+            display: flex;
+            @include fullCollorButton($blue);
+
+            a{
+                font-size: 16px;
+                color: $white;
+                text-decoration: none;
+                font-family: 'Akrobat';
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+
+
+    }
+    
 }
 
 
 
+/* .card--GeoSpec a:nth-last-child(1),
+    .card--TeenWeek a:nth-last-child(1){
+    margin-left: 10px;
+    }  */
+    /* .card__item a{
+        text-decoration: none;
+        color: #fff;
     
+        margin: auto 0 30px 30px;
+    } */
 
+    /* .card--GeoSpec a:nth-last-child(1),
+    .card--TeenWeek a:nth-last-child(1){
+    margin-left: 10px;
+    }  */
+    /* .card__item a{
+        text-decoration: none;
+        color: #fff;
+    
+        margin: auto 0 30px 30px;
+    } */
