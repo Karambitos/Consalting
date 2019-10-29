@@ -8,11 +8,12 @@ $black: #000;
 @mixin button ($color) {
     border: 2px solid $color;
     border-radius: 35px;
-    padding: 15px 30px;
+    padding: 15px 28px;
     font-size: 16px;
     text-align: center;
     vertical-align: middle;
     align-items: center; 
+    background-color: transparent;
     opacity: 1;
 
     &:hover,&:focus{
@@ -28,7 +29,7 @@ $black: #000;
 @mixin fullCollorButton ($color) {
     border: 2px solid $color;
     border-radius: 35px;
-    padding: 15px 30px;   
+    padding: 20px 38px;   
     background-color: $color;
 
     &:hover,&:focus{
@@ -47,7 +48,7 @@ $black: #000;
 // тел в header
 @mixin links ($color) { 
     border-radius: 35px;
-    padding: 15px 35px;
+    padding: 10px 20px;
     text-align: center;
     vertical-align: middle;
     align-items: center; 
@@ -64,7 +65,6 @@ $black: #000;
 // кнопки в header
 @mixin linksSmall ($color) {
     border-radius: 35px;
-    // padding: 15px 0px;
     text-align: center;
     vertical-align: middle;
     align-items: center; 
@@ -405,15 +405,16 @@ ul{
                 height: 320px;
                 margin: 8px;
 
-                @media (min-width: 1008px) {
+                @media (min-width: 1170px) {
                     width: 360px;
                     height: 360px;
                     margin: 15px;
                 }
-                
+
                 a{
                     text-decoration: none;
                     color: #fff;
+                    font-size: 16px;
                     border-radius: 35px;
                     padding: 15px 35px;
                     text-align: center;
@@ -421,13 +422,29 @@ ul{
                     align-items: center; 
                     box-sizing: border-box;
                     background-color: $grayLink;
+
+                    @include links($blue);
+
+                    &.button--item {
+                        margin-left: 30px;
+                        padding: 10px 20px;
+                    }
                 }
 
                 h3{
                     height: 240px;
                     font-weight: 300;
                     letter-spacing: 2px;
-                    margin: 40px 0 0 30px;
+                    margin: 10px 0 0 30px;
+                
+                    @media (min-width: 1008px) {
+                        height: 220px;
+                        margin: 40px 0 0 30px;
+                    }
+
+                    @media (min-width: 1170px){
+                        height: 260px;
+                    }
                 }
 
                 &.card--Exxon {
@@ -445,13 +462,19 @@ ul{
                                 background-repeat: no-repeat;
                             }
 
+                            @media (min-width: 1008px) {
+                                width: 656px;
+                                background-size: contain;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                            }
+
                             @media (min-width: 1170px){
                                 width: 750px;
                                 background-size: contain;
                                 background-position: center;
                                 background-repeat: no-repeat;
                             }
-            
                 }
                 &.card--TeenWeek {
                     background-image: url(../images/Back-3.jpg);
@@ -460,15 +483,33 @@ ul{
                                 background-size: auto;
                                 background-position: right;
                                 background-repeat: no-repeat;
-                                
+
+                                a.button--item {
+                                    margin-left: 8px;
+                                    padding: 10px 10px;
+                                }
                             }
             
                             @media (min-width: 720px){
+                                width: 656px;
+                                background-size: contain;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                a.button--item {
+                                    margin-left: 30px;
+                                    padding: 10px 20px;
+                                }
+                                a:nth-last-child(1) {
+                                    margin-left: 10px;
+                                }
+                            }
+
+                            @media (min-width: 1170px){
                                 width: 750px;
                                 background-size: contain;
                                 background-position: center;
                                 background-repeat: no-repeat;
-                            }
+                            }            
                 }
                 &.card--Baseg {
                     background-image: url(../images/Back-4.jpg);
@@ -487,11 +528,12 @@ ul{
                     background-size: contain;
                     background-position: center;
                     background-repeat: no-repeat;
-                    color: #42515b;
             
                     a{
                         color: #42515b;
-                    
+                        background-color: #f7f7f7;
+
+                        @include links($blue);
                     }
             
                 }
@@ -501,10 +543,25 @@ ul{
                     background-size: contain;
                     background-position: center;
                     background-repeat: no-repeat;
+
+                    a.button--item {
+                        margin-left: 8px;
+                        padding: 10px 10px;
+                    }
+
+                    @media (min-width: 1170px){
+
+                        a.button--item {
+                            margin-left: 30px;
+                            padding: 10px 20px;
+                        }
+                        a:nth-last-child(1) {
+                            margin-left: 10px;
+                        }
+                    }
                 }
             }
         }
-
         button{
             margin: 15px auto 30px;
             display: flex;
@@ -519,32 +576,285 @@ ul{
                 text-transform: uppercase;
             }
         }
-
-
-    }
     
+    }
 }
 
+// POPUP
+
+.modal{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: $grayLink;
+    display: none;
+
+    @media (min-width: 320px){
+        position: absolute;
+    }
+
+    @media (min-width: 768px){
+        position: fixed;
+    }
+
+    .services__conteiner{
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+
+        .service__help{
+            max-width: 1330px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            
+
+            button{
+                
+                @include fullCollorButton($blue);
+                position: relative;
+
+               a{
+                text-decoration: none;
+                color: #fff;
+                font-size: 16px;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-family: 'Akrobat'
+                } 
+
+                @media (min-width: 320px){
+                    margin: auto 30px;
+                    padding: 10px 20px;
+                }
+
+                @media (min-width: 854px){
+                    margin: 30px 0 85px auto; 
+                    padding: 18px 66px;
+                }
+            }  
+
+            .services__close{
+                width: 58px;
+                height: 58px;
+                margin: 30px 0 30px 30px;
+                border: 2px solid $blue;
+                border-radius: 50px;
+                position: relative;
 
 
-/* .card--GeoSpec a:nth-last-child(1),
-    .card--TeenWeek a:nth-last-child(1){
-    margin-left: 10px;
-    }  */
-    /* .card__item a{
-        text-decoration: none;
-        color: #fff;
+            }
+
+            .services__close::after{
+                content: "";
+                position: absolute;
+                top: 29px;
+                left: 17px;
+                width: 24px;
+                height: 2px;
+            
+                transform: rotate(45deg);
+                background-color: $blue;
+            } 
+            .services__close::before{
+                content: "";
+                position: absolute;
+                top: 29px;
+                left: 17px;
+                width: 24px;
+                height: 2px;
+                transform: rotate(-45deg);
+                background-color: $blue;
+            } 
+        }
+
+        .service__main{
+            display: flex;
+            max-width: 1140px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            @media (min-width: 854px){
+                justify-content: space-between;
+            }
+
+            @media (min-width: 1140px){
+                margin-bottom: 85px;
+            }
+            
+
+            .service{
+                width: 285px; 
+                margin-bottom: 30px;
+
+                @media (min-width: 1140px){
+                    margin-bottom: 0;
+                }
+
+
+                h3{
+                    font-size: 30px;
+                    line-height: 65px;
+                    font-weight: 300;
+                    margin: 0;
+                    letter-spacing: 6px;
+                }
+
+                a{
+                    text-decoration: none;
+                    color: $gray;
+                    font-family: 'Ubuntu', sans-serif;
+                    font-size: 16px;
+                    line-height: 40px;
+                    text-transform: none; 
+                    font-weight: 100;
+                }
+           
+            .development__picture{
+                width: 122px;
+                height: 99px;
+
+                background-image: url(../images/development.png);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;  
+                }
+            .promotion__picture{
+                width: 122px;
+                height: 99px;
+                
+                background-image: url(../images/promotion.png);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;  
+                }
+            .brending__picture{
+                width: 122px;
+                height: 99px;
+                
+                background-image: url(../images/brending.png);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;  
+                }
+            .support__picture{
+                width: 122px;
+                height: 99px;
+                
+                background-image: url(../images/support.png);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;  
+                }
+            }
+        
+        }
+        .support__bottom{
+            max-width: 1140px;
+            width: 100%;
+            margin: 0 auto;
+            
+            display: flex;
+            background-color: $bg;
+            align-items: center;
+            box-sizing: border-box;
+            
+            @media (min-width: 320px){
+                margin-bottom: 0;
+                justify-content: space-around;
+                padding: 10px;
+            }
+
+            @media (min-width: 854px){
+                margin-bottom: 100px;
+                justify-content: space-between;
+                padding: 0;
+            }
+            
+
+                .bottom__picture{
+                    width: 242px;
+                    height: 150px;
+                    background-image: url(../images/service_Illustration.png);
+                    background-size: contain;
+                    background-position: left;
+                    background-repeat: no-repeat;
+
+                    @media (min-width: 320px){
+                        display: none;
+                    }
+        
+                    @media (min-width: 854px){
+                        display: block;
+                    }
+                }
+
+                .bottom__title{
+                    h3{
+                        font-weight: 300;
+                        color: $gray;
+                        margin-bottom: 10px;
+
+                        @media (min-width: 320px){
+                            font-size: 30px;
+                        }
+            
+                        @media (min-width: 854px){
+                            font-size: 40px;
+                        }
+                    }
+
+                    p{
+                        font-weight: 300;
+                        color: $gray;
+                        margin-top: 0;
+                        text-transform: none;
+
+                        @media (min-width: 320px){
+                            font-size: 20px;
+                        }
+            
+                        @media (min-width: 854px){
+                            font-size: 16px;
+                        }
+                    }
+                    
+
+                }
+                
+                button{    
+                    @include button($blue);
+                    padding: 16px 68px;
+                    margin-right: 95px;
     
-        margin: auto 0 30px 30px;
-    } */
+                   a{
+                    text-decoration: none;
+                    color: $blue;
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    font-family: 'Akrobat'
+                    } 
 
-    /* .card--GeoSpec a:nth-last-child(1),
-    .card--TeenWeek a:nth-last-child(1){
-    margin-left: 10px;
-    }  */
-    /* .card__item a{
-        text-decoration: none;
-        color: #fff;
-    
-        margin: auto 0 30px 30px;
-    } */
+                    @media (min-width: 320px){
+                        margin-right: 0px;
+                        padding: 16px 30px;
+                    }
+        
+                    @media (min-width: 854px){
+                        margin-right: 95px;
+                        padding: 16px 68px;
+                    }
+                }
+            }
+    }
+}
+
+.modal-show {
+    display: block;
+}

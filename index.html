@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./fonts/akrobat.css">
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/normalize.css">
@@ -20,7 +21,7 @@
                 </div>
                 <div class="navigation">
                     <ul class="site-navigation">
-                        <li><a href="#">услуги</a></li>
+                        <li class="servic_button"><a href="#">услуги</a></li>
                         <li><a href="#">проекты</a></li>
                         <li><a href="#">о нас</a></li>
                         <li><a href="#">цены</a></li>
@@ -66,39 +67,99 @@
             <ul class="cards__list">
                 <li class="card__item card--Exxon">
                     <h3 class="card__title">сайт официального дистрибьютора «Exxon</br>Mobil»</h3>
-                    <a href="#" class="button grey">корпоративный сайт</a>
+                    <a href="#" class="button button--item">корпоративный сайт</a>
                 </li>
                 <li class="card__item card--Talan">
                     <h3 class="card__title">Бот-консультант</br>федерального</br>застройщика «Талан»</h3>
-                    <a href="" class="button grey">чат-бот</a>
+                    <a href="" class="button button--item">чат-бот</a>
                 </li>
                 <li class="card__item card--TeenWeek">
                     <h3 class="card__title">сайт онлайн фитнес-клуба</br>«TeenWeek»</h3>
-                    <a href="#" class="button grey">веб-приложение</a>
-                    <a href="#" class="button grey">брендинг</a>
+                    <a href="#" class="button button--item">веб-приложение</a>
+                    <a href="#" class="button button--item">брендинг</a>
                 </li>
                 <li class="card__item card--Baseg">
                     <h3 class="card__title">дизайн и надежная поддержка магазина «Baseg»</h3>
-                    <a href="#" class="button grey">интернет магазин</a>
+                    <a href="#" class="button button--item">интернет магазин</a>
                 </li>
                 <li class="card__item card--PPD">
                     <h3 class="card__title">Красивые решения для производства насосов ППД</h3>
-                    <a href="#" class="button grey">корпоративный сайт</a>
+                    <a href="#" class="button button--item">корпоративный сайт</a>
                 </li>
                 <li class="card__item card--Kairos">
                     <h3 class="card__title">Сайт кабельной и электропродукции «Кайрос инжиниринг»</h3>
-                    <a href="#" class="button white">корпоративный сайт</a>
+                    <a href="#" class="button button--item">корпоративный сайт</a>
                 </li>
                 <li class="card__item card--GeoSpec">
                     <h3 class="card__title">Ярко представили работы для «ГеоСпецТехнология»</h3>
-                    <a href="#" class="button grey">корпоративный сайт</a>
-                    <a href="#" class="button grey">брендинг</a>
+                    <a href="#" class="button button--item">корпоративный сайт</a>
+                    <a href="#" class="button button--item">брендинг</a>
                 </li>
             </ul>
-            <button class="button__cont"><a href="#" class="button">показать еще<span class="plas"></span></a></button>
-            
+            <button><a href="#" class="button">показать еще<span class="plas"></span></a></button>
         </section>
     </main> 
-    
+    <section class="modal">
+        <div class="services__conteiner">
+            <div class="service__help">
+                <!-- <div class="help__button"> -->
+                <button><a href="#" class="button">нужна помощь?</a></button>
+                <!-- </div> -->
+                <div class="services__close"></div>
+            </div>
+            <section class="service__main">
+                <div class="service development">
+                    <div class="development__picture"></div>
+                    <h3 class="title">Разработка</h3>
+                    <ul class="development-list">
+                        <li class="development--item"><a href="#">Корпоративный сайт</a></li>
+                        <li class="development--item"><a href="#">Интернет-магазин</a></li>
+                        <li class="development--item"><a href="#">Веб-приложение</a></li>
+                        <li class="development--item"><a href="#">Мобильное приложение</a></li>
+                        <li class="development--item"><a href="#">Сайт на готовом решении</a></li>
+                        <li class="development--item"><a href="#">Лендинг пейдж</a></li>
+                        <li class="development--item"><a href="#">Чат бот</a></li>
+                    </ul>
+                </div>
+                <div class="service promotion">
+                    <div class="promotion__picture"></div>
+                    <h3 class="title">Продвижение</h3>
+                    <ul class="promotion-list">
+                        <li class="promotion--item"><a href="#">Поисковое продвижение</a></li>
+                        <li class="promotion--item"><a href="#">Контекстная реклама</a></li>
+                        <li class="promotion--item"><a href="#">Таргетированая реклама</a></li>
+                        <li class="promotion--item"><a href="#">Продвижение игр и приложений</a></li>
+                    </ul>
+                </div>
+                <div class="service brending">
+                    <div class="brending__picture"></div>
+                    <h3 class="title">Брендинг</h3>
+                    <ul class="brending-list">
+                        <li class="brending--item"><a href="#">Логотип</a></li>
+                        <li class="brending--item"><a href="#">Айдентика</a></li>
+                    </ul>
+                </div>
+                <div class="service support">
+                    <div class="support__picture"></div>
+                    <h3 class="title">Поддержка</h3>
+                    <ul class="support-list">
+                        <li class="support--item"><a href="#">Техническая поддержка</a></li>
+                        <li class="support--item"><a href="#">Дизайнерский аутсорсинг</a></li>
+                    </ul>
+                </div>
+            </section>
+            <div class="support__bottom">
+                <div class="bottom__picture"></div>
+                <div class="bottom__title">
+                    <h3>Digital Комплекс</h3>
+                    <p>Сайт и рекламма за 20 000 грн.</p>
+                </div>
+                <div class="bottom__button">
+                    <button><a href="#" class="button">подробнее</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./script/script.js"></script>
 </body>
 </html>
