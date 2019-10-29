@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -1038,5 +1039,39 @@ ul {
 
 .modal-show {
   display: block;
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+}
+
+/*           АНИМАЦИЯ             */
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(-2000px);
+            transform: translateY(-2000px);
+  }
+  50% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  90% {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+}
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(-2000px);
+            transform: translateY(-2000px);
+  }
+  50% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  90% {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
 }
 /*# sourceMappingURL=all.css.map */

@@ -857,4 +857,14 @@ ul{
 
 .modal-show {
     display: block;
+    animation-name: bounce;
+    animation-duration: 0.6s;
+}
+
+/*           АНИМАЦИЯ             */
+@keyframes bounce {
+
+	0%   { transform: translateY(-2000px);}
+	50%  { transform: translateY(10px);	  }
+	90%  { transform: translateY(30px);  }
 }
