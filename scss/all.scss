@@ -113,14 +113,12 @@ ul{
     background-color: $bg;
 
     .header-conteiner{
-        max-width: 1353px;
+        max-width: 1305px;
 
         margin: auto;
-        padding: 5px 15px;
-    
+        padding: 30px 15px 5px 15px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: flex-end;
         align-items: center;
 
         @media (min-width: 320px) {
@@ -149,13 +147,53 @@ ul{
             margin-left: auto;
         }
 
-        .site-navigation,
-        .site-contacts {
+        .site-nav__active,
+        .site-cont__active  {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
         }
+
+
+
+        .navigation__active { 
+            position: absolute;
+            display: block;
+            background-color: $white;
+            width: 250px; 
+            min-height: 150px;
+
+            top: 100px;
+            right: 15px;
+            margin: auto;
+            border: 2px solid $blue;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+            border-bottom: none;
+        } 
+
+        .contacts__active { 
+            position: absolute;
+            display: block;
+            background-color: $white;
+            width: 250px;  
+            
+            top: 250px;
+            right: 15px;
+            margin: auto; 
+            border: 2px solid $blue;
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+            border-top: none;  
+
+                .site-contacts__item{
+                    margin: 10px auto;
+
+                    max-width: 200px;
+                }
+        } 
+        
 
         .site-contacts{
             a{
@@ -182,26 +220,21 @@ ul{
                 @include linksSmall($grayLink);
                 
                 a{
-                    // display: block;
-                    // box-sizing: border-box;
                     padding: 0 15px;
-
-                }
-                // &:nth-child(5){
-                //     margin-right: 50px;
                 }
             }
+        }
         
         .navigation,
         .contacts {
             @media (min-width: 320px) {
                 display: none;
             }
-
             @media (min-width: 720px){
                     display: block;
                 }
             }
+
         .spinner {
             box-sizing: border-box;
             cursor: pointer;
@@ -209,15 +242,12 @@ ul{
             height: 14px;
             width: 18px;
             margin: 14px 20px;
-
             @media (min-width: 320px) {
                 display: block;
             }
-
             @media (min-width: 720px){
                     display: none;
                 }
-
             .spinner-line {
                 transition: all 0.3s;
                 box-sizing: border-box;
@@ -226,7 +256,6 @@ ul{
                 width: 35px;
                 background-color: #000;
               }
-          
               .horizontal {
                 transition: all 0.3s;
                 box-sizing: border-box;
@@ -234,14 +263,12 @@ ul{
                 float: left;
                 margin-top: 3px;
               }
-          
               .diagonal.part-1 {
                 position: relative;
                 transition: all 0.3s;
                 box-sizing: border-box;
                 float: left;
               }
-          
               .diagonal.part-2 {
                 transition: all 0.3s;
                 box-sizing: border-box;
@@ -249,21 +276,18 @@ ul{
                 float: left;
                 margin-top: 3px;
               }
-          
               .spinner-line.active.horizontal {
                 transition: all 0.3s;
                 box-sizing: border-box;
                 opacity: 0;
                 margin-top: 0;
               }
-          
               .spinner-line.active.diagonal.part-1 {
                 transition: all 0.3s;
                 box-sizing: border-box;
                 transform: rotate(135deg);
                 margin-top: 6px;
               }
-          
               .spinner-line.active.diagonal.part-2 {
                 transition: all 0.3s;
                 box-sizing: border-box;
@@ -271,8 +295,6 @@ ul{
                 margin-top: -4px;
               }
         }   
-    
-        
     }
 
     /*  SLIDER */
@@ -600,6 +622,7 @@ ul{
     .services__conteiner{
         background-color: $white;
         display: flex;
+        position: fixed;
         flex-direction: column;
 
         .service__help{
