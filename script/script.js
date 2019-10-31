@@ -9,15 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const servicesClose = document.querySelector('.services__close')
     const popupService = document.querySelector('.modal-services')
     const spinner = document.querySelector('.spinner')
+    const body = document.querySelector('body')
 
         services.addEventListener('click', (event) => {
             event.preventDefault();
             popupService.classList.add("modal-show");
+            body.style.overflow = 'hidden';
             spinner.style.display = 'none';
         });
         servicesClose.addEventListener('click', (event) => {
             event.preventDefault();
             popupService.classList.remove("modal-show");
+            body.style.overflow = '';
             spinner.style.display = '';
         });
 
@@ -29,6 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
         spinner.addEventListener('click', (event) => {
             event.preventDefault();
             spinerMenu.classList.toggle("modal-show-right");
+            if (body.style.overflow === '') {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = '';
+            }
             spinnerButton.forEach(elem => {
                 elem.classList.toggle("active")  
             });
