@@ -95,40 +95,6 @@ ul {
           align-items: center;
 }
 
-.main-nav .header-conteiner .navigation__active {
-  position: absolute;
-  display: block;
-  background-color: #ffffff;
-  width: 250px;
-  min-height: 150px;
-  top: 100px;
-  right: 15px;
-  margin: auto;
-  border: 2px solid #117af7;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  border-bottom: none;
-}
-
-.main-nav .header-conteiner .contacts__active {
-  position: absolute;
-  display: block;
-  background-color: #ffffff;
-  width: 250px;
-  top: 250px;
-  right: 15px;
-  margin: auto;
-  border: 2px solid #117af7;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-top: none;
-}
-
-.main-nav .header-conteiner .contacts__active .site-contacts__item {
-  margin: 10px auto;
-  max-width: 200px;
-}
-
 .main-nav .header-conteiner .site-contacts a {
   color: #117af7;
   text-decoration: none;
@@ -468,6 +434,18 @@ ul {
   color: #fff;
 }
 
+@media (min-width: 320px) {
+  .main__content .cards .cards__list {
+    width: 320px;
+  }
+}
+
+@media (min-width: 340px) {
+  .main__content .cards .cards__list {
+    width: 100vh;
+  }
+}
+
 .main__content .cards .cards__list .card__item {
   width: 320px;
   height: 320px;
@@ -713,7 +691,157 @@ ul {
   text-transform: uppercase;
 }
 
-.modal {
+.burger__menu {
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 35px;
+  font-weight: 200;
+  position: absolute;
+  display: none;
+  background-color: rgba(71, 72, 73, 0.93);
+  width: 250px;
+  min-height: 568px;
+  top: 0;
+  right: 0;
+  margin: auto;
+}
+
+.burger__menu .site-navigation {
+  margin-top: 70px;
+  margin-left: 15px;
+}
+
+.burger__menu .site-navigation .burger__service-button,
+.burger__menu .site-navigation .burger__project-button,
+.burger__menu .site-navigation .burger__aboutUs-button,
+.burger__menu .site-navigation .burger__price-button,
+.burger__menu .site-navigation .burger__contacts-button,
+.burger__menu .site-navigation .burger__fone-button,
+.burger__menu .site-navigation .burger__consultation-button {
+  padding: 5px 0;
+  text-align: left;
+}
+
+.burger__menu .site-navigation .burger__service-button .dropdown-toggle,
+.burger__menu .site-navigation .burger__project-button .dropdown-toggle,
+.burger__menu .site-navigation .burger__aboutUs-button .dropdown-toggle,
+.burger__menu .site-navigation .burger__price-button .dropdown-toggle,
+.burger__menu .site-navigation .burger__contacts-button .dropdown-toggle,
+.burger__menu .site-navigation .burger__fone-button .dropdown-toggle,
+.burger__menu .site-navigation .burger__consultation-button .dropdown-toggle {
+  position: relative;
+}
+
+.burger__menu .site-navigation .burger__service-button .dropdown-toggle:hover, .burger__menu .site-navigation .burger__service-button .dropdown-toggle:focus,
+.burger__menu .site-navigation .burger__project-button .dropdown-toggle:hover,
+.burger__menu .site-navigation .burger__project-button .dropdown-toggle:focus,
+.burger__menu .site-navigation .burger__aboutUs-button .dropdown-toggle:hover,
+.burger__menu .site-navigation .burger__aboutUs-button .dropdown-toggle:focus,
+.burger__menu .site-navigation .burger__price-button .dropdown-toggle:hover,
+.burger__menu .site-navigation .burger__price-button .dropdown-toggle:focus,
+.burger__menu .site-navigation .burger__contacts-button .dropdown-toggle:hover,
+.burger__menu .site-navigation .burger__contacts-button .dropdown-toggle:focus,
+.burger__menu .site-navigation .burger__fone-button .dropdown-toggle:hover,
+.burger__menu .site-navigation .burger__fone-button .dropdown-toggle:focus,
+.burger__menu .site-navigation .burger__consultation-button .dropdown-toggle:hover,
+.burger__menu .site-navigation .burger__consultation-button .dropdown-toggle:focus {
+  -webkit-transition: inherit;
+  transition: inherit;
+  -webkit-transform: rotateZ(-90deg);
+          transform: rotateZ(-90deg);
+}
+
+.burger__menu .site-navigation .burger__service-button .dropdown-toggle:after,
+.burger__menu .site-navigation .burger__project-button .dropdown-toggle:after,
+.burger__menu .site-navigation .burger__aboutUs-button .dropdown-toggle:after,
+.burger__menu .site-navigation .burger__price-button .dropdown-toggle:after,
+.burger__menu .site-navigation .burger__contacts-button .dropdown-toggle:after,
+.burger__menu .site-navigation .burger__fone-button .dropdown-toggle:after,
+.burger__menu .site-navigation .burger__consultation-button .dropdown-toggle:after {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  display: inline-block;
+  border-top: 6px solid transparent;
+  border-left: 6px solid white;
+  border-bottom: 6px solid transparent;
+  content: '';
+  -webkit-transition: inherit;
+  transition: inherit;
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+}
+
+.burger__menu .site-navigation .burger__service-button a,
+.burger__menu .site-navigation .burger__project-button a,
+.burger__menu .site-navigation .burger__aboutUs-button a,
+.burger__menu .site-navigation .burger__price-button a,
+.burger__menu .site-navigation .burger__contacts-button a,
+.burger__menu .site-navigation .burger__fone-button a,
+.burger__menu .site-navigation .burger__consultation-button a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.burger__menu .site-navigation .burger__service-button ul,
+.burger__menu .site-navigation .burger__project-button ul,
+.burger__menu .site-navigation .burger__aboutUs-button ul,
+.burger__menu .site-navigation .burger__price-button ul,
+.burger__menu .site-navigation .burger__contacts-button ul,
+.burger__menu .site-navigation .burger__fone-button ul,
+.burger__menu .site-navigation .burger__consultation-button ul {
+  margin: 0 25px;
+}
+
+.burger__menu .site-navigation .burger__service-button ul .servise_item,
+.burger__menu .site-navigation .burger__project-button ul .servise_item,
+.burger__menu .site-navigation .burger__aboutUs-button ul .servise_item,
+.burger__menu .site-navigation .burger__price-button ul .servise_item,
+.burger__menu .site-navigation .burger__contacts-button ul .servise_item,
+.burger__menu .site-navigation .burger__fone-button ul .servise_item,
+.burger__menu .site-navigation .burger__consultation-button ul .servise_item {
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.burger__menu .site-navigation .burger__service-button ul .service__submenu--list,
+.burger__menu .site-navigation .burger__project-button ul .service__submenu--list,
+.burger__menu .site-navigation .burger__aboutUs-button ul .service__submenu--list,
+.burger__menu .site-navigation .burger__price-button ul .service__submenu--list,
+.burger__menu .site-navigation .burger__contacts-button ul .service__submenu--list,
+.burger__menu .site-navigation .burger__fone-button ul .service__submenu--list,
+.burger__menu .site-navigation .burger__consultation-button ul .service__submenu--list {
+  margin: 0 15px;
+  font-size: 14px;
+}
+
+.burger__menu .site-navigation .burger__service-button ul .service__submenu--list a,
+.burger__menu .site-navigation .burger__project-button ul .service__submenu--list a,
+.burger__menu .site-navigation .burger__aboutUs-button ul .service__submenu--list a,
+.burger__menu .site-navigation .burger__price-button ul .service__submenu--list a,
+.burger__menu .site-navigation .burger__contacts-button ul .service__submenu--list a,
+.burger__menu .site-navigation .burger__fone-button ul .service__submenu--list a,
+.burger__menu .site-navigation .burger__consultation-button ul .service__submenu--list a {
+  font-size: 14px;
+  text-transform: none;
+}
+
+.burger__menu .site-navigation .burger__service-button ul .service__submenu--list a:hover, .burger__menu .site-navigation .burger__service-button ul .service__submenu--list a:focus,
+.burger__menu .site-navigation .burger__project-button ul .service__submenu--list a:hover,
+.burger__menu .site-navigation .burger__project-button ul .service__submenu--list a:focus,
+.burger__menu .site-navigation .burger__aboutUs-button ul .service__submenu--list a:hover,
+.burger__menu .site-navigation .burger__aboutUs-button ul .service__submenu--list a:focus,
+.burger__menu .site-navigation .burger__price-button ul .service__submenu--list a:hover,
+.burger__menu .site-navigation .burger__price-button ul .service__submenu--list a:focus,
+.burger__menu .site-navigation .burger__contacts-button ul .service__submenu--list a:hover,
+.burger__menu .site-navigation .burger__contacts-button ul .service__submenu--list a:focus,
+.burger__menu .site-navigation .burger__fone-button ul .service__submenu--list a:hover,
+.burger__menu .site-navigation .burger__fone-button ul .service__submenu--list a:focus,
+.burger__menu .site-navigation .burger__consultation-button ul .service__submenu--list a:hover,
+.burger__menu .site-navigation .burger__consultation-button ul .service__submenu--list a:focus {
+  text-decoration: underline;
+}
+
+.modal-services {
   width: 100%;
   height: 100%;
   top: 0;
@@ -722,30 +850,29 @@ ul {
 }
 
 @media (min-width: 320px) {
-  .modal {
+  .modal-services {
     position: absolute;
   }
 }
 
 @media (min-width: 768px) {
-  .modal {
+  .modal-services {
     position: fixed;
   }
 }
 
-.modal .services__conteiner {
+.modal-services .services__conteiner {
   background-color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: fixed;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-.modal .services__conteiner .service__help {
+.modal-services .services__conteiner .service__help {
   max-width: 1330px;
   width: 100%;
   margin: 0 auto;
@@ -757,7 +884,7 @@ ul {
           justify-content: flex-end;
 }
 
-.modal .services__conteiner .service__help button {
+.modal-services .services__conteiner .service__help button {
   border: 2px solid #117af7;
   border-radius: 35px;
   padding: 20px 38px;
@@ -765,20 +892,20 @@ ul {
   position: relative;
 }
 
-.modal .services__conteiner .service__help button:hover, .modal .services__conteiner .service__help button:focus {
+.modal-services .services__conteiner .service__help button:hover, .modal-services .services__conteiner .service__help button:focus {
   border: 2px solid #117af7;
   background-color: transparent;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.modal .services__conteiner .service__help button:hover a, .modal .services__conteiner .service__help button:focus a {
+.modal-services .services__conteiner .service__help button:hover a, .modal-services .services__conteiner .service__help button:focus a {
   background-color: transparent;
   color: #117af7;
   border: none;
 }
 
-.modal .services__conteiner .service__help button a {
+.modal-services .services__conteiner .service__help button a {
   text-decoration: none;
   color: #fff;
   font-size: 16px;
@@ -788,20 +915,20 @@ ul {
 }
 
 @media (min-width: 320px) {
-  .modal .services__conteiner .service__help button {
+  .modal-services .services__conteiner .service__help button {
     margin: auto 30px;
     padding: 10px 20px;
   }
 }
 
 @media (min-width: 854px) {
-  .modal .services__conteiner .service__help button {
+  .modal-services .services__conteiner .service__help button {
     margin: 30px 0 85px auto;
     padding: 18px 66px;
   }
 }
 
-.modal .services__conteiner .service__help .services__close {
+.modal-services .services__conteiner .service__help .services__close {
   width: 58px;
   height: 58px;
   margin: 30px 0 30px 30px;
@@ -810,7 +937,7 @@ ul {
   position: relative;
 }
 
-.modal .services__conteiner .service__help .services__close::after {
+.modal-services .services__conteiner .service__help .services__close::after {
   content: "";
   position: absolute;
   top: 29px;
@@ -822,7 +949,7 @@ ul {
   background-color: #117af7;
 }
 
-.modal .services__conteiner .service__help .services__close::before {
+.modal-services .services__conteiner .service__help .services__close::before {
   content: "";
   position: absolute;
   top: 29px;
@@ -834,7 +961,7 @@ ul {
   background-color: #117af7;
 }
 
-.modal .services__conteiner .service__main {
+.modal-services .services__conteiner .service__main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -849,7 +976,7 @@ ul {
 }
 
 @media (min-width: 854px) {
-  .modal .services__conteiner .service__main {
+  .modal-services .services__conteiner .service__main {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -857,23 +984,23 @@ ul {
 }
 
 @media (min-width: 1140px) {
-  .modal .services__conteiner .service__main {
+  .modal-services .services__conteiner .service__main {
     margin-bottom: 85px;
   }
 }
 
-.modal .services__conteiner .service__main .service {
+.modal-services .services__conteiner .service__main .service {
   width: 285px;
   margin-bottom: 30px;
 }
 
 @media (min-width: 1140px) {
-  .modal .services__conteiner .service__main .service {
+  .modal-services .services__conteiner .service__main .service {
     margin-bottom: 0;
   }
 }
 
-.modal .services__conteiner .service__main .service h3 {
+.modal-services .services__conteiner .service__main .service h3 {
   font-size: 30px;
   line-height: 65px;
   font-weight: 300;
@@ -881,7 +1008,7 @@ ul {
   letter-spacing: 6px;
 }
 
-.modal .services__conteiner .service__main .service a {
+.modal-services .services__conteiner .service__main .service a {
   text-decoration: none;
   color: #42515b;
   font-family: 'Ubuntu', sans-serif;
@@ -891,7 +1018,7 @@ ul {
   font-weight: 100;
 }
 
-.modal .services__conteiner .service__main .service .development__picture {
+.modal-services .services__conteiner .service__main .service .development__picture {
   width: 122px;
   height: 99px;
   background-image: url(../images/development.png);
@@ -900,7 +1027,7 @@ ul {
   background-repeat: no-repeat;
 }
 
-.modal .services__conteiner .service__main .service .promotion__picture {
+.modal-services .services__conteiner .service__main .service .promotion__picture {
   width: 122px;
   height: 99px;
   background-image: url(../images/promotion.png);
@@ -909,7 +1036,7 @@ ul {
   background-repeat: no-repeat;
 }
 
-.modal .services__conteiner .service__main .service .brending__picture {
+.modal-services .services__conteiner .service__main .service .brending__picture {
   width: 122px;
   height: 99px;
   background-image: url(../images/brending.png);
@@ -918,7 +1045,7 @@ ul {
   background-repeat: no-repeat;
 }
 
-.modal .services__conteiner .service__main .service .support__picture {
+.modal-services .services__conteiner .service__main .service .support__picture {
   width: 122px;
   height: 99px;
   background-image: url(../images/support.png);
@@ -927,7 +1054,7 @@ ul {
   background-repeat: no-repeat;
 }
 
-.modal .services__conteiner .support__bottom {
+.modal-services .services__conteiner .support__bottom {
   max-width: 1140px;
   width: 100%;
   margin: 0 auto;
@@ -943,7 +1070,7 @@ ul {
 }
 
 @media (min-width: 320px) {
-  .modal .services__conteiner .support__bottom {
+  .modal-services .services__conteiner .support__bottom {
     margin-bottom: 0;
     -ms-flex-pack: distribute;
         justify-content: space-around;
@@ -952,7 +1079,7 @@ ul {
 }
 
 @media (min-width: 854px) {
-  .modal .services__conteiner .support__bottom {
+  .modal-services .services__conteiner .support__bottom {
     margin-bottom: 100px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -961,7 +1088,7 @@ ul {
   }
 }
 
-.modal .services__conteiner .support__bottom .bottom__picture {
+.modal-services .services__conteiner .support__bottom .bottom__picture {
   width: 242px;
   height: 150px;
   background-image: url(../images/service_Illustration.png);
@@ -971,36 +1098,36 @@ ul {
 }
 
 @media (min-width: 320px) {
-  .modal .services__conteiner .support__bottom .bottom__picture {
+  .modal-services .services__conteiner .support__bottom .bottom__picture {
     display: none;
   }
 }
 
 @media (min-width: 854px) {
-  .modal .services__conteiner .support__bottom .bottom__picture {
+  .modal-services .services__conteiner .support__bottom .bottom__picture {
     display: block;
   }
 }
 
-.modal .services__conteiner .support__bottom .bottom__title h3 {
+.modal-services .services__conteiner .support__bottom .bottom__title h3 {
   font-weight: 300;
   color: #42515b;
   margin-bottom: 10px;
 }
 
 @media (min-width: 320px) {
-  .modal .services__conteiner .support__bottom .bottom__title h3 {
+  .modal-services .services__conteiner .support__bottom .bottom__title h3 {
     font-size: 30px;
   }
 }
 
 @media (min-width: 854px) {
-  .modal .services__conteiner .support__bottom .bottom__title h3 {
+  .modal-services .services__conteiner .support__bottom .bottom__title h3 {
     font-size: 40px;
   }
 }
 
-.modal .services__conteiner .support__bottom .bottom__title p {
+.modal-services .services__conteiner .support__bottom .bottom__title p {
   font-weight: 300;
   color: #42515b;
   margin-top: 0;
@@ -1008,18 +1135,18 @@ ul {
 }
 
 @media (min-width: 320px) {
-  .modal .services__conteiner .support__bottom .bottom__title p {
+  .modal-services .services__conteiner .support__bottom .bottom__title p {
     font-size: 20px;
   }
 }
 
 @media (min-width: 854px) {
-  .modal .services__conteiner .support__bottom .bottom__title p {
+  .modal-services .services__conteiner .support__bottom .bottom__title p {
     font-size: 16px;
   }
 }
 
-.modal .services__conteiner .support__bottom button {
+.modal-services .services__conteiner .support__bottom button {
   border: 2px solid #117af7;
   border-radius: 35px;
   padding: 15px 28px;
@@ -1035,18 +1162,18 @@ ul {
   margin-right: 95px;
 }
 
-.modal .services__conteiner .support__bottom button:hover, .modal .services__conteiner .support__bottom button:focus {
+.modal-services .services__conteiner .support__bottom button:hover, .modal-services .services__conteiner .support__bottom button:focus {
   background-color: #117af7;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   cursor: pointer;
 }
 
-.modal .services__conteiner .support__bottom button:hover a, .modal .services__conteiner .support__bottom button:focus a {
+.modal-services .services__conteiner .support__bottom button:hover a, .modal-services .services__conteiner .support__bottom button:focus a {
   color: #ffffff;
 }
 
-.modal .services__conteiner .support__bottom button a {
+.modal-services .services__conteiner .support__bottom button a {
   text-decoration: none;
   color: #117af7;
   font-size: 16px;
@@ -1056,14 +1183,14 @@ ul {
 }
 
 @media (min-width: 320px) {
-  .modal .services__conteiner .support__bottom button {
+  .modal-services .services__conteiner .support__bottom button {
     margin-right: 0px;
     padding: 16px 30px;
   }
 }
 
 @media (min-width: 854px) {
-  .modal .services__conteiner .support__bottom button {
+  .modal-services .services__conteiner .support__bottom button {
     margin-right: 95px;
     padding: 16px 68px;
   }
@@ -1073,6 +1200,14 @@ ul {
   display: block;
   -webkit-animation-name: bounce;
           animation-name: bounce;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+}
+
+.modal-show-right {
+  display: block;
+  -webkit-animation-name: bounceRight;
+          animation-name: bounceRight;
   -webkit-animation-duration: 0.6s;
           animation-duration: 0.6s;
 }
@@ -1104,6 +1239,36 @@ ul {
   90% {
     -webkit-transform: translateY(30px);
             transform: translateY(30px);
+  }
+}
+
+@-webkit-keyframes bounceRight {
+  0% {
+    -webkit-transform: translateX(2000px);
+            transform: translateX(2000px);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+}
+
+@keyframes bounceRight {
+  0% {
+    -webkit-transform: translateX(2000px);
+            transform: translateX(2000px);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
   }
 }
 /*# sourceMappingURL=all.css.map */

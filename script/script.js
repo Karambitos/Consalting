@@ -1,12 +1,13 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // services
+   
+    {
+        // services
 
     const services = document.querySelector('.servic_button')
     const servicesClose = document.querySelector('.services__close')
-    const popupService = document.querySelector('.modal')
+    const popupService = document.querySelector('.modal-services')
     const spinner = document.querySelector('.spinner')
 
         services.addEventListener('click', (event) => {
@@ -14,40 +15,52 @@ document.addEventListener('DOMContentLoaded', () => {
             popupService.classList.add("modal-show");
             spinner.style.display = 'none';
         });
-
         servicesClose.addEventListener('click', (event) => {
             event.preventDefault();
             popupService.classList.remove("modal-show");
             spinner.style.display = '';
         });
 
+        // BURGER
 
-    // BURGER
-
-    const nav = document.querySelector('.navigation')
-    const cont = document.querySelector('.contacts')
-    const siteNav = document.querySelector('.site-navigation')
-    const siteCont = document.querySelector('.site-contacts')
-    
+    const spinerMenu = document.querySelector('.burger__menu')
+    const spinnerButton = document.querySelectorAll('.spinner-line')
 
         spinner.addEventListener('click', (event) => {
             event.preventDefault();
-            siteNav.classList.toggle("site-nav__active");
-            siteCont.classList.toggle("site-cont__active");
-            nav.classList.toggle("navigation__active");
-            cont.classList.toggle("contacts__active");
+            spinerMenu.classList.toggle("modal-show-right");
+            spinnerButton.forEach(elem => {
+                elem.classList.toggle("active")  
+            });
 
-            nav.style.display = 'block';
-            cont.style.display = 'block';
+         });
 
-            // if (nav.style.display = 'block') {
-            //     nav.style.display = ''
-            // } if (cont.style.display = 'block') {
-            //     cont.style.display = ''
-            // } 
+    const burgerServ = document.getElementById('service')
+    // const sudmenuServ = document.getSelectionAll('.servise_item')
+        
+            burgerServ.addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log(burgerServ);
+
+            
+            // const sudmenuServ = burgerServ.getSelectionAll('.servise_item');
+            // console.log(sudmenuServ)
+            // sudmenuServ.forEach(elem => {
+            //     elem.classList.toggle("modal-show")  
+            // });
         });
-       
+
+    // const burgerServ = document.getSelection('.burger__service-button')
+    // const sudmenuServ = document.getSelection('.servise_item')
+    // console.log(burgerServ)
+        // burgerServ.addEventListener('click', (event) => {
+        //     event.preventDefault();
+        //     sudmenuServ.classList.toggle("modal-show");
+            
+        // });
+    }
     
+
 });
 
 
