@@ -35,29 +35,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
          });
 
-    const burgerServ = document.getElementById('service')
-    // const sudmenuServ = document.getSelectionAll('.servise_item')
-        
+    const burgerServ = document.querySelector('.burger__service-button')
+    const sudmenuServ = burgerServ.querySelectorAll('.servise_item')
+   
             burgerServ.addEventListener('click', (event) => {
             event.preventDefault();
-            console.log(burgerServ);
-
-            
-            // const sudmenuServ = burgerServ.getSelectionAll('.servise_item');
-            // console.log(sudmenuServ)
-            // sudmenuServ.forEach(elem => {
-            //     elem.classList.toggle("modal-show")  
-            // });
+            // console.log(target);
+            // console.log(sudmenuServ);
+            sudmenuServ.forEach(elem => {
+                if (elem.style.display === '') {
+                    elem.style.display = 'block';
+                } else {
+                    elem.style.display = '';
+                }    
+            });
         });
 
-    // const burgerServ = document.getSelection('.burger__service-button')
-    // const sudmenuServ = document.getSelection('.servise_item')
-    // console.log(burgerServ)
-        // burgerServ.addEventListener('click', (event) => {
-        //     event.preventDefault();
-        //     sudmenuServ.classList.toggle("modal-show");
-            
-        // });
+        const development = burgerServ.querySelector('.development')
+        const submenuListServ = burgerServ.querySelector('.service__submenu--list')
+            development.addEventListener('click', (event) => {
+            event.preventDefault();
+            submenuListServ.style.display = 'block';
+            // sudmenuServ.forEach(elem => {
+            //     if (elem.style.display === '') {
+            //         elem.style.display = 'block';
+            //     } else {
+            //         elem.style.display = '';
+            //     }    
+            // });
+        });
+    
     }
     
 
