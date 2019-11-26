@@ -385,18 +385,19 @@ ul{
             justify-content: center;
         
             color: #fff;
-            @media (min-width: 320px){
-                width: 320px;
-             }
+
+            // @media (min-width: 320px){
+            //     width: 320px;
+            //  }
 
             // @media (min-height: 320px){
             //     margin-left: auto;
             //     margin-right: auto;
             // }
       
-             @media (min-width: 340px){
-                width: 100vh;
-             }
+            //  @media (min-width: 340px){
+            //     width: 100vh;
+            //  }
 
             .card__item {
                 width: 320px;
@@ -526,6 +527,7 @@ ul{
                     background-size: contain;
                     background-position: center;
                     background-repeat: no-repeat;
+                    color: #42515b;
             
                     a{
                         color: #42515b;

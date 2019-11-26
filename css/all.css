@@ -434,18 +434,6 @@ ul {
   color: #fff;
 }
 
-@media (min-width: 320px) {
-  .main__content .cards .cards__list {
-    width: 320px;
-  }
-}
-
-@media (min-width: 340px) {
-  .main__content .cards .cards__list {
-    width: 100vh;
-  }
-}
-
 .main__content .cards .cards__list .card__item {
   width: 320px;
   height: 320px;
@@ -612,6 +600,7 @@ ul {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  color: #42515b;
 }
 
 .main__content .cards .cards__list .card__item.card--Kairos a {
